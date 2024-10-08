@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Gym.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")] 
     public class SubscriptionsController : ControllerBase
     {
         private readonly ISender _mediator;
