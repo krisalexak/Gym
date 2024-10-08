@@ -1,0 +1,5 @@
+@host = https://localhost:7267
+
+@subscriptionId=00000000-0000-0000-0000-000000000001
+
+GET {{host}}/Subscriptions/{{subscriptionId}}
