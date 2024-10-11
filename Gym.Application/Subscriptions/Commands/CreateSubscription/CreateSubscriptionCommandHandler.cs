@@ -27,8 +27,7 @@ namespace Gym.Application.Subscriptions.Commands
         {
             var subscription = new Subscription(
                 request.SubscriptionType,
-                request.AdminId,
-                request.SubscriptionId
+                request.AdminId
                 );
             await _subscriptionRepository.AddSubscriptionAsync(subscription);
             await _unitOfWork.CommitChangesAsync();
