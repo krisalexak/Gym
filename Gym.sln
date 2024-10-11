@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gym.Application", "..\Gym.Application\Gym.Application.csproj", "{D810090B-68EC-483E-8D60-F2A3DDEBC44C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gym.Application", "Gym.Application\Gym.Application.csproj", "{D810090B-68EC-483E-8D60-F2A3DDEBC44C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gym.Domain", "..\Gym.Domain\Gym.Domain.csproj", "{9FD02691-F562-48AF-8EF3-6C8223344C16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gym.Domain", "Gym.Domain\Gym.Domain.csproj", "{9FD02691-F562-48AF-8EF3-6C8223344C16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gym.Infrastructure", "..\Gym.Infrastructure\Gym.Infrastructure.csproj", "{9E5DFA23-2914-4E61-A5BA-001EB2B98968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gym.Infrastructure", "Gym.Infrastructure\Gym.Infrastructure.csproj", "{9E5DFA23-2914-4E61-A5BA-001EB2B98968}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{4C55D2C9-3C45-4E54-9D25-670313AABC21}"
 EndProject

@@ -1,5 +1,4 @@
-﻿using Gym.Application.Services;
-using Gym.Application.Subscriptions.Commands;
+﻿using Gym.Application.Subscriptions.Commands;
 using Gym.Application.Subscriptions.Queries;
 using Gym.Contracts.Subscriptions;
 using MediatR;

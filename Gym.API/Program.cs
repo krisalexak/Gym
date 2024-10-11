@@ -1,4 +1,3 @@
-using Gym.Application.Services;
 using Gym.Application;
 using Gym.Infrastructure;
 
