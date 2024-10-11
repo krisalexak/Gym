@@ -3,16 +3,12 @@ using Gym.Application.Subscriptions.Queries;
 using Gym.Contracts.Subscriptions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DomainSubscriptionType = Gym.Domain.Subscriptions.SubscriptionType;
 
 namespace Gym.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")] 
+    [Route("[controller]")]
     public class SubscriptionsController : ControllerBase
     {
         private readonly ISender _mediator;
@@ -24,7 +20,13 @@ namespace Gym.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateSubscription(CreateSubscriptionRequest request)
         {
-            var command = new CreateSubscriptionCommand(request.SubscriptionType.ToString(), request.SubscriptionId);
+            if (!DomainSubscriptionType.TryFromName(request.SubscriptionType.ToString(), out var subscriptionType))
+            {
+                return Problem(
+                    statusCode: StatusCodes.Status400BadRequest, 
+                    detail: "Invalid subscription type");
+            }
+            var command = new CreateSubscriptionCommand(subscriptionType, request.SubscriptionId, request.AdminId);
             var createSubscriptionResult = await _mediator.Send(command);
 
             return createSubscriptionResult.MatchFirst(
@@ -40,8 +42,8 @@ namespace Gym.Api.Controllers
             var getSubscriptionsResult = await _mediator.Send(query);
 
             return getSubscriptionsResult.MatchFirst(
-                subscription => Ok(new SubscriptionResponse(subscription.Id, Enum.Parse<SubscriptionType>(subscription.SubscriptionType))),
-                error => Problem(error.Description,error.Code)
+                subscription => Ok(new SubscriptionResponse(subscription.Id, Enum.Parse<SubscriptionType>(subscription.SubscriptionType.Name))),
+                error => Problem(error.Description, error.Code)
                 );
 
         }

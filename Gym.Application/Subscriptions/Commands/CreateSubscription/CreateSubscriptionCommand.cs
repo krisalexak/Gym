@@ -9,5 +9,5 @@ using System.Threading.Tasks;
 
 namespace Gym.Application.Subscriptions.Commands
 {
-    public record CreateSubscriptionCommand(string SubscriptionType,Guid SubscriptionId) :IRequest<ErrorOr<Subscription>>;
+    public record CreateSubscriptionCommand(SubscriptionType SubscriptionType,Guid SubscriptionId, Guid AdminId) :IRequest<ErrorOr<Subscription>>;
 }
