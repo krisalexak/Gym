@@ -1,14 +1,8 @@
-﻿using Gym.Domain.Subscriptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Gym.Application.Common.Interfaces
+namespace GymManagement.Application.Common.Interfaces;
+
+public interface IUnitOfWork
 {
-    public interface IUnitOfWork
-    {
-        Task CommitChangesAsync();
-    }
+    Task CommitChangesAsync();
 }

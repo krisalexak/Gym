@@ -1,5 +1,5 @@
-using Gym.Application;
-using Gym.Infrastructure;
+using GymManagement.Application;
+using GymManagement.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +9,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddProblemDetails();
+
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
+app.UseExceptionHandler();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

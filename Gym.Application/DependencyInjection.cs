@@ -1,21 +1,16 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Gym.Application
+namespace GymManagement.Application;
+
+public static class DependencyInjection
 {
-    public static class DependencyInjection
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services) {
+        services.AddMediatR(options =>
+        {
+            options.RegisterServicesFromAssemblyContaining(typeof(DependencyInjection));
+        });
 
-            services.AddMediatR(options => { 
-                options.RegisterServicesFromAssemblyContaining(typeof(DependencyInjection));
-            });
-            return services;
-        }
+        return services;
     }
 }

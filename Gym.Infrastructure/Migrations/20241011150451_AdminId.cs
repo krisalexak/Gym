@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Gym.Infrastructure.Migrations
+namespace GymManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class AdminId : Migration

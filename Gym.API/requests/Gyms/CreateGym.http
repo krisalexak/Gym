@@ -1,0 +1,13 @@
+@host=https://localhost:7267
+@subscriptionId=bd6f1a12-fdc1-4874-9bca-8beb95d7c955
+
+POST {{host}}/subscriptions/{{subscriptionId}}/gyms
+Content-Type: application/json
+
+{
+    "Name": "Amiko's gym"
+}
+
+###
+
+http://localhost:5051/subscriptions/51b5d6fd-75fe-44d9-a56f-2dcde66fad56/gyms/59bf64b3-fee6-4403-9631-d1a4f57cb032
